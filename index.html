@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>VAT Calculator</title>
+    <script src="vat-calculator.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>VAT Calculator</h1>
+
+      <table>
+        <tr>
+          <td>VAT Percentage (%):</td>
+          <td>
+            <input type="number" id="vatPercentage" value="24" />
+          </td>
+        </tr>
+        <tr>
+          <td>Price Without VAT:</td>
+          <td>
+            <input type="number" id="priceWithoutVAT" />
+          </td>
+          <td
+            id="resultWithoutVAT"
+            class="result"
+            onclick="copyToClipboard(this)"
+          >
+            €0.00
+          </td>
+        </tr>
+        <tr>
+          <td>Price With VAT:</td>
+          <td>
+            <input type="number" id="priceWithVAT" />
+          </td>
+          <td id="resultWithVAT" class="result" onclick="copyToClipboard(this)">
+            €0.00
+          </td>
+        </tr>
+        <tr>
+          <td>VAT Amount:</td>
+          <td></td>
+          <td id="resultVAT" class="result" onclick="copyToClipboard(this)">
+            €0.00
+          </td>
+        </tr>
+        <tr></tr>
+      </table>
+      <div id="calculate" onclick="calculateVAT()">Calculate</div>
+
+      <div class="tooltip" id="tooltip"></div>
+    </div>
+  </body>
+</html>
